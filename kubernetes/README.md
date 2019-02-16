@@ -1,5 +1,18 @@
-### Microservices, Docker, Kubernetes
+## Microservices, Docker, Kubernetes
 
+#### Story
+
+10 years ago we were tasked with writing a web application that performs sentiment analysis. This application takes as input one sentence and says whether the sentence is saying something positive or something negative. Back then everybody was building traditional server side MVC applications so we did the same thing and picked Spring MVC to develop our application.
+
+Fast forward 5 years and now everybody builds Single Page Web applications and obviously want their applications to look good on Mobile Devices. So how do we adapt to this new world? Well ... we can still use Spring MVC for the back end but now the functionality needs to be exposed via REST endpoints instead of serving HTML content. These REST endpoints are in turn used by our new shiny React Front end, that uses Bootstrap to handle Responsive Web Design for us.
+
+Fast forward another 2 years and now every problem is a Machine Learning problem so everybody needs to use ML or DL to look cool. The problem is that that we need to use Python to benefit from the best ML libraries. Now our application has JavaScript on the front end, Java on the Web serving layer and Python on the back end. The application evolved from using Java across the entire stack to using 3 distinct technologies maintained by 3 distinct teams working across 3 different continents. Now we need to figure out how to develop and deploy these components independently.
+
+Because of the new Machine Learning library our application became an instant success and we need to scale it up. From an initial benchmarking it seems that the sentiment analysis component needs to scale by a factor of 10 but the Spring MVC piece only needs to scale by a factor of 3. Besides we cannot have downtime anymore. So we need to figure out how to scale each of these components independently and also how to avoid having downtime.
+
+This are the problems that we will try to solve during this workshop. 
+
+#### Goals
 In this workshop we are going to learn about the following:
 * Why do we need micro-services?
   * problems they solve
@@ -12,6 +25,9 @@ In this workshop we are going to learn about the following:
   * why Kubernetes  
   * scaling micro-services independently
   * zero downtime deployments
+
+
+
 
 
 https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882
