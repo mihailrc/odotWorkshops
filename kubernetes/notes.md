@@ -1,3 +1,18 @@
+### Microservices, Docker, Kubernetes
+
+In this workshop we are going to learn about the following:
+* Why do we need micro-services?
+  * problems they solve
+  * problems they create
+* Docker Containers
+  * VM's vs Containers
+  * how they relate to micro-services
+  * basics of Docker and Docker files
+* Container orchestration with Kubernetes
+  * why Kubernetes  
+  * scaling micro-services independently
+  * zero downtime deployments
+
 
 https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882
 
