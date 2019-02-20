@@ -18,7 +18,6 @@ In this workshop we are going to learn about the following:
   * problems they solve
   * problems they create
 * Docker Containers
-  * VM's vs Containers
   * how they relate to micro-services
   * basics of Docker and Docker files
 * Container orchestration with Kubernetes
@@ -54,16 +53,37 @@ For me the simplest way of defining Agile is take a small step towards solving a
 
 One option is to do development directly on the local computer but that means I will need to install multiple libraries like npm, java, python and so on and I don’t really like cluttering my computer. There is the additional risk of configuration drift between different development machines so this does not seem like a good option.
 
-Problem: How do we create an environment that is lightweight and does not clutter our computer?
+**Problem:** How do we create an environment that is lightweight and does not clutter our computer?
 <br/>
-Solution: We can use a docker container that has build dependencies installed.
+**Solution:** We can use a docker container that has build dependencies installed.
 <br/>
-Problem: But wait - what about  development tools like an IDE? They are not going to be available on the docker container and I don’t want to give this up.
+**Problem:** But wait - what about  development tools like an IDE? They are not going to be available on the docker container and I don’t want to give this up.
 <br/>
-Solution: A simple way of addressing this problem is to share a volume between the host and the Docker container.
+**Solution:** A simple way of addressing this problem is to share a volume between the host and the Docker container.
 
-So let's get started and focus on building the front end first.
+So let's get started and focus on building the micro-services.
 
+```
+cd sa
+python -m pip install -r requirements.txt
+python -m textblob.download_corpora
+python sentiment_analysis.py
+
+docker network inspect bridge
+
+cd target
+java -jar sentiment-analysis-web-0.0.1-SNAPSHOT.jar
+     --sa.logic.api.url=http://localhost:5000
+
+npm start     
+```
+
+#### Building Docker images
+
+So far we focused on using Docker as a development environment and hopefully saw the advantages of doing so. The next step is to package and deploy the application. In traditional applications we create a package and then deploy to some server. With Docker we don't need to do that. Instead of packaging the application we build a Docker image that contains our package.
+
+===========================
+https://www.backblaze.com/blog/vm-vs-containers/
 
 Best practices for running Docker and Node
 https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
