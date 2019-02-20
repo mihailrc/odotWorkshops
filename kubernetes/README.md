@@ -64,23 +64,31 @@ One option is to do development directly on the local computer but that means I 
 So let's get started and focus on building the micro-services.
 
 ```
+
+./logicDev.sh
 cd sa
 python -m pip install -r requirements.txt
 python -m textblob.download_corpora
 python sentiment_analysis.py
 
+#in another terminal - note the IP of logic_dev container
 docker network inspect bridge
 
+./webDev.sh
 cd target
 java -jar sentiment-analysis-web-0.0.1-SNAPSHOT.jar
-     --sa.logic.api.url=http://localhost:5000
+     --sa.logic.api.url=http://logic_dev_ip:5000
 
+#in another terminal
+./frontEndDev.sh
 npm start     
+
 ```
 
 #### Building Docker images
 
-So far we focused on using Docker as a development environment and hopefully saw the advantages of doing so. The next step is to package and deploy the application. In traditional applications we create a package and then deploy to some server. With Docker we don't need to do that. Instead of packaging the application we build a Docker image that contains our package.
+So far we focused on using Docker as a development environment and hopefully saw the advantages of doing so. The next step is to package and deploy the application. In traditional applications we create a package and then deploy to some server. With Docker we don't need to do that. Instead of packaging the application we build a Docker image that contains the package.
+
 
 ===========================
 https://www.backblaze.com/blog/vm-vs-containers/
