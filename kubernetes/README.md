@@ -30,9 +30,8 @@ To follow along in this workshop the following have to be installed
 * git
 * Docker Machine
 * Minikube
-* Helm
 
-#### Chapter 1
+#### Chapter 0
 Now the saga begins ...
 
 I am not going to bore you with creating an MVC application. As a starting point we are going to use an application that is already split into 3 components. For most of this workshop I am going to follow this [excellent introduction to Kubernetes](https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882)
@@ -48,68 +47,12 @@ The application consists of 3 micro-services
 * SA-WebApp handles request from front end
 * SA-Logic performs sentiment analysis
 
-
-#### Setting up the development environment
-For me the simplest way of defining Agile is take a small step towards solving a problem, learn from it, take the next step. To be Agile our development process has to enable quick feedback loops. One enabler of quick feedback loops is a lightweight development environment that can be reproduced easily and reliably.
-
-One option is to do development directly on the local computer but that means I will need to install multiple libraries like npm, java, python and so on and I don’t really like cluttering my computer. There is the additional risk of configuration drift between different development machines so this does not seem like a good option.
-
-**Problem:** How do we create an environment that is lightweight and does not clutter our computer?
-<br/>
-**Solution:** We can use a docker container that has build dependencies installed.
-<br/>
-**Problem:** But wait - what about  development tools like an IDE? They are not going to be available on the docker container and I don’t want to give this up.
-<br/>
-**Solution:** A simple way of addressing this problem is to share a volume between the host and the Docker container.
-
-So let's get started and focus on building the micro-services.
-
-```
-
-./logicDev.sh
-cd sa
-python -m pip install -r requirements.txt
-python -m textblob.download_corpora
-python sentiment_analysis.py
-
-#in another terminal - note the IP of logic_dev container
-docker network inspect bridge
-
-./webDev.sh
-cd target
-java -jar sentiment-analysis-web-0.0.1-SNAPSHOT.jar
-     --sa.logic.api.url=http://logic_dev_ip:5000
-
-#in another terminal
-./frontEndDev.sh
-npm start     
-
-```
-
-#### Building Docker images
-
-So far we focused on using Docker as a development environment and hopefully saw the advantages of doing so. The next step is to package and deploy the application. In traditional applications we create a package and then deploy to some server. With Docker we don't need to do that. Instead of packaging the application we build a Docker image that contains the package.
-
-Docker images are build by reading the instructions from a Dockerfile.
-
-docker build command builds an image form a Dockerfile and a context. The build context is the set of files at a specific location or path. The context is processed recursively so it includes any subdirectories. The build is run by the Docker daemon and it starts by sending the entire context to the daemon.
-
-Explain the following:
-* Dockerfile
-* building an image
-* .dockerignore
-* docker repository
-
-#### Building front end image
-
-#### Building webapp image
-
-#### Building logic layer image
-
-The experience of running individual docker images is not that great. Can we improve it? Sure we can. We can use docker-compose to run a single command and run the entire application.
-
-### Docker compose
-A tool for defining and running multi container Docker applications.
+#### Chapter 1 - Setting up the development environment
+This explains why it is beneficial to set up a development environment based on Docker Containers
+#### Chapter 2 - It's all about containers
+This explains how to build the application components as Docker images
+#### Chapter 3 - Running multi container applications locally
+This introduces Docker Compose and show how to improve the experience of running an application that consists of multiple Docker containers
 
 #### Kubernetes
 Kubernetes
