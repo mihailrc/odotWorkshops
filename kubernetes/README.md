@@ -30,6 +30,7 @@ To follow along in this workshop the following have to be installed
 * git
 * Docker Machine
 * Minikube
+* Helm
 
 #### Chapter 1
 Now the saga begins ...
@@ -89,6 +90,65 @@ npm start
 
 So far we focused on using Docker as a development environment and hopefully saw the advantages of doing so. The next step is to package and deploy the application. In traditional applications we create a package and then deploy to some server. With Docker we don't need to do that. Instead of packaging the application we build a Docker image that contains the package.
 
+Docker images are build by reading the instructions from a Dockerfile.
+
+docker build command builds an image form a Dockerfile and a context. The build context is the set of files at a specific location or path. The context is processed recursively so it includes any subdirectories. The build is run by the Docker daemon and it starts by sending the entire context to the daemon.
+
+Explain the following:
+* Dockerfile
+* building an image
+* .dockerignore
+* docker repository
+
+#### Building front end image
+
+#### Building webapp image
+
+#### Building logic layer image
+
+The experience of running individual docker images is not that great. Can we improve it? Sure we can. We can use docker-compose to run a single command and run the entire application.
+
+### Docker compose
+A tool for defining and running multi container Docker applications.
+
+#### Kubernetes
+Kubernetes
+* Q; How do we scale containers?
+* Q: What if the server is full cannot run another container?
+* Q: How do we balance the load between containers?
+* Q: How do we do rolling updates? How we go back to a previous version if something goes wrong?
+
+### basic concepts
+* Master node - API server - kubectl
+* Worker nodes - kubelet, Pods
+
+#### Pods
+* smallest deployable unit
+* has a unique IP address in a Kubernetes cluster
+* a pod can have multiple containers but that is rather unusual.
+* containers in a pod share the same volume, IP, port space
+* pods can be used with other technologies like RKT
+
+#### Services
+How do we load balance between them?
+
+In our application we have different functional services. So how does a service which pods to load balance? This is done using labels.
+* Apply a label to all services we want to target
+* Apply a selector to our services so that defines which labeled pods to target
+
+#### Deployments
+Start multiple pods for Frontend
+
+#### Ingress Controller
+How do expose it externally?
+
+To avoid hardcoding IP in the frontend use ingress
+ https://www.orange-networks.com/blogs/210-ingress-controller-simplified-routing-in-kubernetes
+
+ Using ingress controller
+ https://github.com/rinormaloku/k8s-mastery/tree/ingress-controller
+
+
 
 ===========================
 https://www.backblaze.com/blog/vm-vs-containers/
@@ -113,32 +173,5 @@ Kubernetes is a Container Orchestrator that provides a layer of abstraction over
 
 https://github.com/iMarcoGovea/books
 
-Kubernetes
-* Q; How do we scale containers?
-* Q: What if the server is full cannot run another container?
-* Q: How do we balance the load between containers?
-* Q: How do we do rolling updates? How we go back to a previous version if something goes wrong?
-
-Kubernetes Pods
-* smallest deployable unit
-* has a unique IP address in a Kubernetes cluster
-* a pod can have multiple containers but that is rather unusual.
-* containers in a pod share the same volume, IP, port space
-* pods can be used with other technologies like RKT
-
-Start multiple pods for Frontend
-How do we load balance between them?
-How do expose it externally?
-
-Kubernetes Services
-In our application we have different functional services. So how does a service which pods to load balance? This is done using labels.
-* Apply a label to all services we want to target
-* Apply a selector to our services so that defines which labeled pods to target
-
-Deployments
-
-To avoid hardcoding IP in the frontend use ingress
- https://www.orange-networks.com/blogs/210-ingress-controller-simplified-routing-in-kubernetes
-
- Using ingress controller
- https://github.com/rinormaloku/k8s-mastery/tree/ingress-controller
+https://blog.getambassador.io/kubernetes-ingress-nodeport-load-balancers-and-ingress-controllers-6e29f1c44f2d
+https://blog.getambassador.io/from-monolith-to-service-mesh-via-a-front-proxy-learnings-from-stories-of-building-the-envoy-333711bfd60c

@@ -1,0 +1,27 @@
+version: "2.0"
+
+services:
+  sa-frontend:
+    build:
+      context: ./k8s-mastery/sa-frontend
+    image: mihailrc/sa-frontend:latest
+    ports:
+    - "80:80"
+
+  sa-webapp:
+    build:
+      context: ./k8s-mastery/sa-webapp
+    image: mihailrc/sa-webapp:latest
+    ports:
+    - "8080:8080"
+    environment:
+    - SA_LOGIC_API_URL=http://sa-logic:5000
+    links:
+    - sa-logic
+
+  sa-logic:
+    build:
+      context: ./k8s-mastery/sa-logic
+    image: mihailrc/sa-logic:latest
+    ports:
+    - "5000:5000"

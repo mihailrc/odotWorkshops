@@ -15,5 +15,5 @@ if [ "$(docker ps -a | grep ${CONTAINER_NAME})" ]; then
   docker exec -it ${CONTAINER_NAME} bash
 else
   echo "Starting a new container"
-  docker run --name ${CONTAINER_NAME} -it -p ${PORT}:${PORT} -v $(pwd)/k8s-mastery/${DIRECTORY}:/code -w /code --entrypoint /bin/bash ${IMAGE}
+  docker run --name ${CONTAINER_NAME} -it -p ${PORT}:${PORT} -v $(pwd)/../k8s-mastery/${DIRECTORY}:/code -w /code --entrypoint /bin/bash ${IMAGE}
 fi
