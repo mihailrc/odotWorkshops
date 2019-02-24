@@ -1,4 +1,4 @@
-## Lab 1 - Setting up the Development Environment
+## Chapter 1 - Setting up the development environment
 
 ### Motivation
 For me the simplest way of thinking about Agile is take a small step towards solving a problem, learn from it, take the next step. To be Agile our development process has to enable quick feedback loops and one such enabler is a lightweight development environment.
