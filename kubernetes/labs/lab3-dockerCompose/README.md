@@ -1,4 +1,8 @@
-The experience of running individual docker images is not that great. Can we improve it? Sure we can. We can use docker-compose to run a single command and run the entire application.
+## Chapter 3 - Docker Compose - Running multi container applications locally
+
+We were able to run the entire applications within 3 Docker containers but there was still one manual step. How can we deploy the entire application using a single command?
+
+This is the problem that Docker Compose solves.
 
 ### Docker compose
-A tool for defining and running multi container Docker applications.
+Docker compose is a tool for defining and running multi container Docker applications. Learn more about it from the [Official Documentation](https://docs.docker.com/compose/)
