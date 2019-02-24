@@ -49,15 +49,15 @@ The application consists of 3 components
 
 #### [Chapter 1 - Setting up the development environment](labs/lab1-devSetup/README.md)
 This explains why it is beneficial to set up a development environment based on Docker Containers
-#### Chapter 2 - Docker - It's all about containers
+#### [Chapter 2 - Docker - It's all about containers](labs/lab2-containers/README.md)
 This explains how to build the application components as Docker images
-#### Chapter 3 - Docker Compose - Running multi container applications locally
+#### [Chapter 3 - Docker Compose - Running multi container applications locally](labs/lab3-dockerCompose/README.md)
 This introduces Docker Compose and show how to improve the experience of running an application that consists of multiple Docker containers
-#### Chapter 4 - Kubernetes Basics - Container Orchestration
+#### [Chapter 4 - Kubernetes Basics - Container Orchestration](labs/lab4-pods/README.md)
 This introduces Kubernetes, what problem it solves and explains some basic concepts
-#### Chapter 5 - Kubernetes Services - Reliability and Fault Tolerance
+#### [Chapter 5 - Kubernetes Services - Reliability and Fault Tolerance](labs/lab5-services/README.md)
 This introduces Kubernetes Services and Load Balancers.
-#### Chapter 6 - Kubernetes Deployments - Scaling and Reliable Deployments
+#### [Chapter 6 - Kubernetes Deployments - Scaling and Reliable Deployments](labs/lab6-deployments/README.md)
 This introduces Kubernetes Deployments and show how to Scale the application, handle application updates with Zero Downtime deploys and rolling back to a previous version if things go wrong.
-#### Chapter 7 - Ingress controllers - Access from the Outside
+#### [Chapter 7 - Ingress controllers - Access from the Outside](labs/lab7-ingress/README.md)
 Making Kubernetes services available from the outside
