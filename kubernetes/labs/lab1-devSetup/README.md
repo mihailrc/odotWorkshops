@@ -5,21 +5,21 @@ For me the simplest way of thinking about Agile is take a small step towards sol
 
 ### Goals
 * Lightweight development and build environment that can be reproduced easily and reliably
-* Does not interfere with development tools running on the development workstation
+* Does not interfere with development tools running on the host computer
 
 **Dependencies:**
-* python3, pip, python libraries for sa-logic
-* mvn, java for sa-webapp
-* node, npm and JavaScript libraries for sa-frontend
+* python3 and pip for sa-logic
+* mvn and java for sa-webapp
+* node and npm for sa-frontend
 
 **Options:**
-1. Install script(s) executed on the development workstation
-2. Existing or custom Docker images with dependencies installed
+1. Create install script(s) that will be executed on the development workstation
+2. Use existing Docker images or create custom Docker images with dependencies installed
 
-** Pros and Cons **
+**Pros and Cons**
 * Let's find these together but think about the following
  * How do we handle configuration drift? What happens when tool versions change?
- * How easy is to recreate this environment on a different workstation? Do I need special permissions?
+ * How easy is to recreate this environment on a different host? Do I need special permissions?
 
 For this lab we are going to use Docker images that are available on DockerHub. This lab has shell scripts to run a Docker container for each of the components. Let's review the scripts first.
 
