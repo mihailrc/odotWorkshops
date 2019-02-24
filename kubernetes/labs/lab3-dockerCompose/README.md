@@ -1,6 +1,6 @@
 ## Chapter 3 - Docker Compose - Running multi container applications locally
 
-We were able to run the entire applications within 3 Docker containers but there was still one manual step. How can we deploy the entire application using a single command?
+We were able to run the entire applications within 3 Docker containers but there was one manual step. The goal is to run the entire application using a single command.
 
 This is the problem that Docker Compose solves.
 
