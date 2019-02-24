@@ -31,22 +31,8 @@ To follow along in this workshop the following have to be installed
 * Docker Machine
 * Minikube
 
-#### Chapter 0
-Now the saga begins ...
-
-I am not going to bore you with creating an MVC application. As a starting point we are going to use an application that is already split into 3 components. For most of this workshop I am going to follow this [excellent introduction to Kubernetes](https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882)
-
-Download the following repository
-
-```
-git clone https://github.com/rinormaloku/k8s-mastery.git
-```
-
-The application consists of 3 components
-* SA-Frontend serves React JS files
-* SA-WebApp handles request from front end
-* SA-Logic performs sentiment analysis
-
+#### [Chapter 0 - Let's get started!](labs/lab0-basicSetup/README.md)
+Explains what we are trying to build and how to get the starter code for the microservices
 #### [Chapter 1 - Setting up the development environment](labs/lab1-devSetup/README.md)
 This explains why it is beneficial to set up a development environment based on Docker Containers
 #### [Chapter 2 - Docker - It's all about containers](labs/lab2-containers/README.md)
