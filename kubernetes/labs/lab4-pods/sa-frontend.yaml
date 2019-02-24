@@ -3,7 +3,7 @@ kind: Pod                               # Kind of resource we are creating
 metadata:
   name: sa-frontend                     # Name of the resource
 #  labels:
-#    app: sa-frontend 
+#    app: sa-frontend
 spec:
   containers:
     - image: mihailrc/sa-frontend      # Docker image to use
