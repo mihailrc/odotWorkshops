@@ -42,79 +42,22 @@ Download the following repository
 git clone https://github.com/rinormaloku/k8s-mastery.git
 ```
 
-The application consists of 3 micro-services
+The application consists of 3 components
 * SA-Frontend serves React JS files
 * SA-WebApp handles request from front end
 * SA-Logic performs sentiment analysis
 
-#### Chapter 1 - Setting up the development environment
+#### [Chapter 1 - Setting up the development environment](labs/lab1-devSetup/README.md)
 This explains why it is beneficial to set up a development environment based on Docker Containers
-#### Chapter 2 - It's all about containers
+#### Chapter 2 - Docker - It's all about containers
 This explains how to build the application components as Docker images
-#### Chapter 3 - Running multi container applications locally
+#### Chapter 3 - Docker Compose - Running multi container applications locally
 This introduces Docker Compose and show how to improve the experience of running an application that consists of multiple Docker containers
-
-#### Kubernetes
-Kubernetes
-* Q; How do we scale containers?
-* Q: What if the server is full cannot run another container?
-* Q: How do we balance the load between containers?
-* Q: How do we do rolling updates? How we go back to a previous version if something goes wrong?
-
-### basic concepts
-* Master node - API server - kubectl
-* Worker nodes - kubelet, Pods
-
-#### Pods
-* smallest deployable unit
-* has a unique IP address in a Kubernetes cluster
-* a pod can have multiple containers but that is rather unusual.
-* containers in a pod share the same volume, IP, port space
-* pods can be used with other technologies like RKT
-
-#### Services
-How do we load balance between them?
-
-In our application we have different functional services. So how does a service which pods to load balance? This is done using labels.
-* Apply a label to all services we want to target
-* Apply a selector to our services so that defines which labeled pods to target
-
-#### Deployments
-Start multiple pods for Frontend
-
-#### Ingress Controller
-How do expose it externally?
-
-To avoid hardcoding IP in the frontend use ingress
- https://www.orange-networks.com/blogs/210-ingress-controller-simplified-routing-in-kubernetes
-
- Using ingress controller
- https://github.com/rinormaloku/k8s-mastery/tree/ingress-controller
-
-
-
-===========================
-https://www.backblaze.com/blog/vm-vs-containers/
-
-Best practices for running Docker and Node
-https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
-
-Dependencies:
-* sa-frontend - npm
-* sa-webapp jdk8 and mvn
-* sa-logic python3 and pip
-
-
-Running in Docker
-* Create a docker container for each of the microservices
-  * Build context and .dockerignore
-* Publish in Docker hub
-* Run the application
-
-Now that we have multiple containers we need some sort of orchestration.
-Kubernetes is a Container Orchestrator that provides a layer of abstraction over the underlying infrastructure
-
-https://github.com/iMarcoGovea/books
-
-https://blog.getambassador.io/kubernetes-ingress-nodeport-load-balancers-and-ingress-controllers-6e29f1c44f2d
-https://blog.getambassador.io/from-monolith-to-service-mesh-via-a-front-proxy-learnings-from-stories-of-building-the-envoy-333711bfd60c
+#### Chapter 4 - Kubernetes Basics - Container Orchestration
+This introduces Kubernetes, what problem it solves and explains some basic concepts
+#### Chapter 5 - Kubernetes Services - Reliability and Fault Tolerance
+This introduces Kubernetes Services and Load Balancers.
+#### Chapter 6 - Kubernetes Deployments - Scaling and Reliable Deployments
+This introduces Kubernetes Deployments and show how to Scale the application, handle application updates with Zero Downtime deploys and rolling back to a previous version if things go wrong.
+#### Chapter 7 - Ingress controllers - Access from the Outside
+Making Kubernetes services available from the outside
