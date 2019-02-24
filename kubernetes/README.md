@@ -57,7 +57,7 @@ This introduces Docker Compose and show how to improve the experience of running
 This introduces Kubernetes, what problem it solves and explains some basic concepts
 #### [Chapter 5 - Kubernetes Services - Reliability and Fault Tolerance](labs/lab5-services/README.md)
 This introduces Kubernetes Services and Load Balancers.
-#### [Chapter 6 - Kubernetes Deployments - Scaling and Reliable Deployments](labs/lab6-deployments/README.md)
+#### [Chapter 6 - Kubernetes Deployments - Scalability and Zero Downtime Deployments](labs/lab6-deployments/README.md)
 This introduces Kubernetes Deployments and show how to Scale the application, handle application updates with Zero Downtime deploys and rolling back to a previous version if things go wrong.
 #### [Chapter 7 - Ingress controllers - Access from the Outside](labs/lab7-ingress/README.md)
 Making Kubernetes services available from the outside
