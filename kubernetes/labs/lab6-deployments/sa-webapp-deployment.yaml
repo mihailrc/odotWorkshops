@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: sa-web-app
+  name: sa-webapp
 spec:
   replicas: 2
   minReadySeconds: 15
@@ -13,12 +13,12 @@ spec:
   template:
     metadata:
       labels:
-        app: sa-web-app
+        app: sa-webapp
     spec:
       containers:
       - image: mihailrc/sa-webapp
         imagePullPolicy: Always
-        name: sa-web-app
+        name: sa-webapp
         env:
           - name: SA_LOGIC_API_URL
             value: "http://sa-logic"

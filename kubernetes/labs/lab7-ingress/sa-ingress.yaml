@@ -14,11 +14,7 @@ spec:
         backend:
           serviceName: sa-frontend
           servicePort: 80
-spec:
-  rules:
-  - http:
-      paths:
       - path: /sentiment
         backend:
-          serviceName: sa-web-app
+          serviceName: sa-webapp
           servicePort: 80

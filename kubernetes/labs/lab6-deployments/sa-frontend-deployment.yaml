@@ -16,8 +16,8 @@ spec:
         app: sa-frontend
     spec:
       containers:
-        - image: mihailrc/sa-frontend
-          imagePullPolicy: Always                         
+        - image: mihailrc/sa-frontend:fixed
+          imagePullPolicy: Always
           name: sa-frontend
           ports:
             - containerPort: 80

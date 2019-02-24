@@ -1,4 +1,14 @@
+## Chapter 7 - Ingress controllers - Access from the Outside
 
+Ingress Controllers are responsible for managing access to the cluster services. This is exactly what we need.
+
+Ingress is an addon and needs to be enabled first
+```
+#show the list of addons
+minikube addons list
+#ensire ingress is enabled
+minikube addons enable ingress
+```
 #### Ingress Controller
 How do expose it externally?
 
