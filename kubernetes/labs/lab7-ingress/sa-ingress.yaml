@@ -3,18 +3,16 @@ kind: Ingress
 metadata:
   name: sa-ingress-frontend
   annotations:
-    kubernetes.io/ingress.class: nginx
-    # ingress.kubernetes.io/add-base-url: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
       paths:
       - path: /
         backend:
-          serviceName: sa-frontend
+          serviceName: sa-frontend-lb
           servicePort: 80
       - path: /sentiment
         backend:
-          serviceName: sa-webapp
+          serviceName: sa-webapp-lb
           servicePort: 80
