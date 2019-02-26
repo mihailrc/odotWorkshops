@@ -12,19 +12,6 @@ Because of the new Machine Learning library the application became an instant su
 
 These are the problems that we will try to solve during this workshop.
 
-#### Goals
-In this workshop we are going to learn about the following:
-* Why do we need micro-services?
-  * problems they solve
-  * problems they create
-* Docker Containers
-  * how they relate to micro-services
-  * basics of Docker and Docker files
-* Container orchestration with Kubernetes
-  * why Kubernetes  
-  * scaling micro-services independently
-  * zero downtime deployments
-
 ### Prerequisites
 To follow along in this workshop the following have to be installed
 * git
