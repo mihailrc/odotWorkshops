@@ -10,9 +10,9 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: sa-frontend-lb
+          serviceName: sa-frontend-service
           servicePort: 80
       - path: /sentiment
         backend:
-          serviceName: sa-webapp-lb
+          serviceName: sa-webapp-service
           servicePort: 80
