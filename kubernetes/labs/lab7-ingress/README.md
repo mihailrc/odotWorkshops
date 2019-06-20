@@ -4,12 +4,11 @@ Ingress Controllers are responsible for managing access to the cluster services.
 
 Ingress is an addon and needs to be enabled first
 ```
-#may need to create this first
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/mandatory.yaml
-kubectl get configmap -n ingress-nginx
 #show the list of addons
 minikube addons list
-#ensire ingress is enabled
+#ensire ingress is enabled if not enable it
 minikube addons enable ingress
+#create all the resources
+kubectl apply -f .
 ```
 https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-ingress-guide-nginx-example.html
